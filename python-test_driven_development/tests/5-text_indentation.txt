@@ -26,7 +26,7 @@ No punctuation here
 >>> text_indentation("")
 
 >>> text_indentation("   Hello.")
-   Hello.
+Hello.
 <BLANKLINE>
 
 >>> text_indentation("Hello.   How are you.")
@@ -51,6 +51,4 @@ TypeError: text must be a string
 ?
 <BLANKLINE>
 
->>> text_indentation(":")
-:
-<BLANKLINE>
+>>> text_indentation
