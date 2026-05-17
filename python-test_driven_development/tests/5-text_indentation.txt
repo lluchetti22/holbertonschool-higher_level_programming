@@ -70,6 +70,7 @@ World.
 
 >>> text_indentation("  spaces  ")
 spaces
+<BLANKLINE>
 
 >>> text_indentation("...")
 .
