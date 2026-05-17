@@ -2,20 +2,23 @@
 
 >>> text_indentation("Hello.")
 Hello.
+<BLANKLINE>
 
 >>> text_indentation("Hello? How are you:")
 Hello?
-
+<BLANKLINE>
 How are you:
+<BLANKLINE>
 
 >>> text_indentation("Hello. How are you? I am fine: thank you.")
 Hello.
-
+<BLANKLINE>
 How are you?
-
+<BLANKLINE>
 I am fine:
-
+<BLANKLINE>
 thank you.
+<BLANKLINE>
 
 >>> text_indentation("No punctuation here")
 No punctuation here
@@ -24,11 +27,13 @@ No punctuation here
 
 >>> text_indentation("   Hello.")
    Hello.
+<BLANKLINE>
 
 >>> text_indentation("Hello.   How are you.")
 Hello.
-
-How are you.
+<BLANKLINE>
+   How are you.
+<BLANKLINE>
 
 >>> text_indentation(123)
 Traceback (most recent call last):
@@ -40,9 +45,12 @@ TypeError: text must be a string
 
 >>> text_indentation(".")
 .
+<BLANKLINE>
 
 >>> text_indentation("?")
 ?
+<BLANKLINE>
 
 >>> text_indentation(":")
 :
+<BLANKLINE>
