@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""Module for dividing all elements of a matrix."""
+
+
 def matrix_divided(matrix, div):
     """Divides all elements of a matrix by div, rounded to 2 decimal places."""
     if not isinstance(matrix, list) or not all(
