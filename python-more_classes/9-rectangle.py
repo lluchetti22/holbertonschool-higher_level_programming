@@ -83,17 +83,17 @@ class Rectangle:
         """Calculates and returns the perimeter of the rectangle.
 
         Returns:
-            int: The perimeter of the rectangle, or 0 if width or height is 0.
+            int: The perimeter, or 0 if width or height is 0.
         """
         if self.__width == 0 or self.__height == 0:
             return 0
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Returns a string representation of the rectangle using print_symbol.
+        """Returns a string representation using print_symbol.
 
         Returns:
-            str: The rectangle as a string, or empty string if width or height is 0.
+            str: The rectangle as a string, or empty string if size is 0.
         """
         if self.__width == 0 or self.__height == 0:
             return ""
@@ -144,6 +144,6 @@ class Rectangle:
             size (int): The size of the square. Defaults to 0.
 
         Returns:
-            Rectangle: A new Rectangle instance with width == height == size.
+            Rectangle: A new Rectangle with width == height == size.
         """
         return cls(size, size)
