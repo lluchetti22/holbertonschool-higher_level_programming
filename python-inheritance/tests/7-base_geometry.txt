@@ -7,56 +7,57 @@
 >>> bg.integer_validator("x", 1)
 >>> bg.integer_validator("height", 100)
 >>> bg.integer_validator("size", 50)
+>>> bg.integer_validator("age", 1)
 
 >>> bg.area()
 Traceback (most recent call last):
     ...
 Exception: area() is not implemented
 
->>> bg.integer_validator("name", 0)
+>>> bg.integer_validator("age", 0)
 Traceback (most recent call last):
     ...
-ValueError: name must be greater than 0
+ValueError: age must be greater than 0
+
+>>> bg.integer_validator("age", -4)
+Traceback (most recent call last):
+    ...
+ValueError: age must be greater than 0
 
 >>> bg.integer_validator("name", -5)
 Traceback (most recent call last):
     ...
 ValueError: name must be greater than 0
 
->>> bg.integer_validator("name", -1)
+>>> bg.integer_validator("age", "4")
 Traceback (most recent call last):
     ...
-ValueError: name must be greater than 0
+TypeError: age must be an integer
 
->>> bg.integer_validator("name", "hello")
+>>> bg.integer_validator("age", (4,))
 Traceback (most recent call last):
     ...
-TypeError: name must be an integer
+TypeError: age must be an integer
 
->>> bg.integer_validator("name", [1, 2])
+>>> bg.integer_validator("age", [3])
 Traceback (most recent call last):
     ...
-TypeError: name must be an integer
+TypeError: age must be an integer
 
->>> bg.integer_validator("name", True)
+>>> bg.integer_validator("age", True)
 Traceback (most recent call last):
     ...
-TypeError: name must be an integer
+TypeError: age must be an integer
 
->>> bg.integer_validator("name", (1, 2))
+>>> bg.integer_validator("age", {3, 4})
 Traceback (most recent call last):
     ...
-TypeError: name must be an integer
+TypeError: age must be an integer
 
->>> bg.integer_validator("name", None)
+>>> bg.integer_validator("age", None)
 Traceback (most recent call last):
     ...
-TypeError: name must be an integer
-
->>> bg.integer_validator("name", {1, 2})
-Traceback (most recent call last):
-    ...
-TypeError: name must be an integer
+TypeError: age must be an integer
 
 >>> bg.integer_validator("name", 3.14)
 Traceback (most recent call last):
@@ -64,11 +65,6 @@ Traceback (most recent call last):
 TypeError: name must be an integer
 
 >>> bg.integer_validator("name", {"a": 1})
-Traceback (most recent call last):
-    ...
-TypeError: name must be an integer
-
->>> bg.integer_validator("name", "")
 Traceback (most recent call last):
     ...
 TypeError: name must be an integer
