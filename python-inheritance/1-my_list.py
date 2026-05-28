@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module contains the print_sorted function"""
+"""Module that defines MyList, a subclass of list."""
 
 class MyList(list):
     """A subclass of list with a custom print_sorted method."""
