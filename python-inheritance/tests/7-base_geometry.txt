@@ -5,6 +5,8 @@
 >>> bg.integer_validator("my_int", 12)
 >>> bg.integer_validator("width", 89)
 >>> bg.integer_validator("x", 1)
+>>> bg.integer_validator("height", 100)
+>>> bg.integer_validator("size", 50)
 
 >>> bg.area()
 Traceback (most recent call last):
@@ -57,6 +59,16 @@ Traceback (most recent call last):
 TypeError: name must be an integer
 
 >>> bg.integer_validator("name", 3.14)
+Traceback (most recent call last):
+    ...
+TypeError: name must be an integer
+
+>>> bg.integer_validator("name", {"a": 1})
+Traceback (most recent call last):
+    ...
+TypeError: name must be an integer
+
+>>> bg.integer_validator("name", "")
 Traceback (most recent call last):
     ...
 TypeError: name must be an integer
