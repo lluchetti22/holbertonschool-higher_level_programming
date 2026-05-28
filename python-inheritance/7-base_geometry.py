@@ -8,14 +8,14 @@ class BaseGeometry:
     def area(self):
         """Raises an Exception since area() is not implemented."""
         raise Exception("area() is not implemented")
-    
+
     def integer_validator(self, name, value):
         """Validates that value is a positive integer.
-        
+
         Args:
             name: the name of the value (always a string).
             value: the value to validate.
-            
+
         Raises:
             TypeError: if value is not an integer.
             ValueError: if value is less than or equal to 0.
