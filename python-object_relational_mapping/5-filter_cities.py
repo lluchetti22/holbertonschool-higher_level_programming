@@ -20,10 +20,9 @@ if __name__ == "__main__":
     cursor.execute(query, (sys.argv[4],))
     query_rows = cursor.fetchall()
     
-    # Extracting the string from the single-element tuple item
+    # Correctly isolate the first index element from the database tuples
     cities = [row[0] for row in query_rows]
     
-    # Joining with commas and space, then appending a trailing newline
     print(", ".join(cities))
     
     cursor.close()
