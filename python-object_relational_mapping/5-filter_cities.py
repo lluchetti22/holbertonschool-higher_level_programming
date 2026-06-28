@@ -7,22 +7,23 @@ if __name__ == "__main__":
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
-        user=sys.argv,
-        passwd=sys.argv,
-        db=sys.argv
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3]
     )
     cursor = db.cursor()
-    query = (
+    cursor.execute(
         "SELECT cities.name FROM cities "
-        "INNER JOIN states ON cities.state_id = states.id "
-        "WHERE states.name = %s ORDER BY cities.id ASC"
+        "JOIN states ON cities.state_id = states.id "
+        "WHERE states.name = %s ORDER BY cities.id ASC",
+        (sys.argv[4],)
     )
-    cursor.execute(query, (sys.argv,))
     query_rows = cursor.fetchall()
     
-    # Correctly isolate the first index element from the database tuples
-    cities = [row for row in query_rows]
+    # Safely extract the string from index 0 of every single row tuple
+    cities = [row[0] for row in query_rows]
     
+    # Print the comma-separated string exactly as required
     print(", ".join(cities))
     
     cursor.close()
