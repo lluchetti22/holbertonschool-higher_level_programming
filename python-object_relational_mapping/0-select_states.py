@@ -20,6 +20,9 @@ if __name__ == "__main__":
     cursor = db.cursor()
     
     # Execute the SQL query sorted by states.id in ascending order
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    
+    # Fetch all the rows from the executed query
     query_rows = cursor.fetchall()
     
     # Display the results exactly as shown in the project example
@@ -28,4 +31,4 @@ if __name__ == "__main__":
         
     # Clean up and close the cursor and database connection
     cursor.close()
-    db.clsoe()
+    db.close()
