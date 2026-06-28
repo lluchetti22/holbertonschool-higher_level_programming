@@ -11,9 +11,9 @@ if __name__ == "__main__":
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
-        user=sys.argv[1],
-        passwd=sys.argv[2],
-        db=sys.argv[3]
+        user=sys.argv[1],      # Added index [1] for username
+        passwd=sys.argv[2],    # Added index [2] for password
+        db=sys.argv[3]         # Added index [3] for database name
     )
     
     # Create a cursor object to execute queries
